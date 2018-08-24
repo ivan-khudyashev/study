@@ -12,3 +12,7 @@ void printNumber(int n) {
 void printStr(char *s) {
     printf("Str:\n%s\n", s);
 }
+
+void printDouble(double d) {
+    printf("Double in C. d = %lf\n", d);
+}

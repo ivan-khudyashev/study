@@ -3,4 +3,5 @@
 void testCfromLua(void);
 void printNumber(int);
 void printStr(char* );
+void printDouble(double);
 #endif
