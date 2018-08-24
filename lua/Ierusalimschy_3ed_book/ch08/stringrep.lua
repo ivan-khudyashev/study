@@ -4,6 +4,12 @@
 function stringrep(s, n)
     local r = ""
     if n > 0 then
+        --[[ 
+        n > 1 because last iteration will be r = r .. s
+         such as last n value will be 1
+        we don't need compare n >= 1 in order to not execute
+         last and not necessary s = s .. s
+        ]]
         while n > 1 do
             if n%2 ~= 0 then r = r .. s end
             s = s .. s
@@ -14,4 +20,4 @@ function stringrep(s, n)
     return r
 end
 
-local res = stringrep("*", 100000000)
+local res = stringrep("*", 1000000000)
