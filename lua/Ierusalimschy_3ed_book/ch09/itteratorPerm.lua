@@ -12,13 +12,13 @@ function permutations(a)
     if(type(a) ~= "table") then 
         error "Wrong argument. It must be sequence"
     end
-    state = {}
+    local state = {}
     state.a = a
     state.curIndexes = {1} -- stack for current Index - on each level own index
     state.curPermLen = #a
     state.masLen = #a
     while(true) do
-        nextPerm = genPerm(state)
+        local nextPerm = genPerm(state)
         if(nextPerm ~= nil) then
             printResult(nextPerm)
         else
