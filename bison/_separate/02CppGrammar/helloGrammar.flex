@@ -11,7 +11,7 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 
 %}
 
-%option noyywrap nounput batch noinput
+%option noyywrap
 
 %{
 #define YY_USER_ACTION loc.columns(yyleng);
