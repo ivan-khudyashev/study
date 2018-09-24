@@ -27,7 +27,6 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 %token <int> HELLO_TOKEN
 %token <int> ID_TOKEN
 
-%printer {yyoutput << $$; } <*>;
 %%
 %start root;
 root:   HELLO_TOKEN COMMA_TOKEN ID_TOKEN {std::cout << "Recognize str" << std::endl;}

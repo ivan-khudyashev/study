@@ -9,12 +9,6 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 #include "driver.hh"
 #include "helloGrammarParser.hh"
 
-#undef yywrap
-#define yywrap() 1
-
-#if defined __GNUC__ && 7 <= __GNUC__
-#pramga GCC diagnostic ignored "-Wnull-dereference"
-#endif
 %}
 
 %option noyywrap nounput batch noinput
