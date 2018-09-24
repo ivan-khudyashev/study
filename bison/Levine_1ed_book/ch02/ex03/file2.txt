@@ -1,0 +1,2 @@
+This is second file
+It has only 2 lines

@@ -1,0 +1,4 @@
+This is again new file: file3
+But this file has another level of include:
+#include <file3_1.txt>
+We return on level 2: file3

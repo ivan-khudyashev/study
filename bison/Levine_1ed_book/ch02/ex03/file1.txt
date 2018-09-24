@@ -1,0 +1,5 @@
+hello
+this simple some file
+#include <file2.txt>
+#include <file3.txt>
+end of first file
