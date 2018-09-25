@@ -8,7 +8,7 @@
 #include "myscanner.hh"
 #include "hGrammarParser.hh"
 
-namespace iv{
+namespace ptaf{
     class Mydriver{
     public:
         Mydriver() = default;
@@ -17,16 +17,11 @@ namespace iv{
         void parse(const char * const filename);
         void parse(std::istream &iss);
 
-        void add_hello_token();
-        void add_id_token();
-        void add_comma_token();
-
-        std::ostream& print(std::ostream &stream);
     private:
         void parse_helper(std::istream &stream);
 
-        iv::Myparser *parser = nullptr;
-        iv::Myscanner *scanner = nullptr;
+        ptaf::Myparser *parser = nullptr;
+        ptaf::Myscanner *scanner = nullptr;
     }; /* end of class Mydriver */
 } /* end of namespace "iv" */
 

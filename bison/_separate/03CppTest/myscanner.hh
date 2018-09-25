@@ -6,9 +6,8 @@
 #endif
 
 #include "hGrammarParser.hh"
-#include "location.hh"
 
-namespace iv {
+namespace ptaf {
 class Myscanner : public yyFlexLexer {
 public:
     Myscanner(std::istream *in): yyFlexLexer(in) {};
@@ -16,10 +15,10 @@ public:
 
     using FlexLexer::yylex;
 
-    virtual int yylex(iv::Myparser::semantic_type * const lval,
-                      iv::Myparser::location_type *location);
+    virtual int yylex(ptaf::Myparser::semantic_type * const lval);
+
 private:
-    iv::Myparser::semantic_type *yylval = nullptr;
+    ptaf::Myparser::semantic_type *yylval = nullptr;
 }; /*end of class Myscanner*/
 
 

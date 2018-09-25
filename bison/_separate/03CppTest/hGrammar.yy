@@ -3,13 +3,12 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 */
 %skeleton "lalr1.cc"
 %require "3.1"
-%debug
 %defines
-%define api.namespace {iv}
+%define api.namespace {ptaf}
 %define parser_class_name {Myparser}
 
 %code requires {
-    namespace iv {
+    namespace ptaf {
         class Mydriver;
         class Myscanner;
     }
@@ -37,13 +36,12 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 %token ID_TOKEN
 %token COMMA_TOKEN
 
-%locations
 
 %%
 root:   HELLO_TOKEN COMMA_TOKEN ID_TOKEN    { std::cout << "SUCCESS!" << std::endl; }
 %%
 
 
-void iv::Myparser::error(const location_type &l, const std::string& s) {
-    std::cerr << std::endl << l << std::endl << "Error when parsing:" << s << std::endl;
+void ptaf::Myparser::error( const std::string& s) {
+    std::cerr << std::endl  << "Error when parsing:" << s << std::endl;
 }

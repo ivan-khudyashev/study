@@ -5,8 +5,7 @@
 #include "mydriver.hh"
 
 int main(const int argc, const char **argv) {
-    iv::Mydriver driver;
+    ptaf::Mydriver driver;
     driver.parse(std::cin);
-    driver.print(std::cout) << std::endl;
     return 0;
 }

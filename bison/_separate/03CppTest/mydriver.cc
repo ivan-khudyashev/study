@@ -4,14 +4,14 @@
 
 #include "mydriver.hh"
 
-iv::Mydriver::~Mydriver() {
+ptaf::Mydriver::~Mydriver() {
     delete(scanner);
     scanner = nullptr;
     delete(parser);
     parser = nullptr;
 }
 
-void iv::Mydriver::parse(const char * const filename) {
+void ptaf::Mydriver::parse(const char * const filename) {
     assert(filename != nullptr);
     std::ifstream in_file(filename);
     if(! in_file.good()) {
@@ -21,7 +21,7 @@ void iv::Mydriver::parse(const char * const filename) {
     return ;
 }
 
-void iv::Mydriver::parse(std::istream &stream) {
+void ptaf::Mydriver::parse(std::istream &stream) {
     if(!stream.good() && stream.eof()) {
         return;
     }
@@ -29,10 +29,10 @@ void iv::Mydriver::parse(std::istream &stream) {
     return;
 }
 
-void iv::Mydriver::parse_helper(std::istream &stream) {
+void ptaf::Mydriver::parse_helper(std::istream &stream) {
     delete(scanner);
     try {
-        scanner = new iv::Myscanner(&stream);
+        scanner = new ptaf::Myscanner(&stream);
     }
     catch(std::bad_alloc &ba) {
         std::cerr << "Failed to allocate scanner: (" <<
@@ -41,7 +41,7 @@ void iv::Mydriver::parse_helper(std::istream &stream) {
     }
     delete(parser);
     try {
-        parser = new iv::Myparser((*scanner), (*this));
+        parser = new ptaf::Myparser((*scanner), (*this));
     }
     catch(std::bad_alloc &ba) {
         std::cerr << "Failed to allocate parser" << std::endl;
@@ -53,16 +53,6 @@ void iv::Mydriver::parse_helper(std::istream &stream) {
     return;
     }
 }
-
-void iv::Mydriver::add_hello_token() {}
-void iv::Mydriver::add_id_token() {}
-void iv::Mydriver::add_comma_token() {}
-
-std::ostream& iv::Mydriver::print(std::ostream &stream) {
-    stream << "This is function iv::Mydriver::print" << std::endl;
-    return(stream);
-}
-
 
 
 

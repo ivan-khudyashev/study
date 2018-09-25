@@ -5,17 +5,16 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 #include <string>
 #include "myscanner.hh"
 #undef YY_DECL
-#define YY_DECL int iv::Myscanner::yylex(iv::Myparser::semantic_type* const lval, iv::Myparser::location_type *loc)
+#define YY_DECL int ptaf::Myscanner::yylex(ptaf::Myparser::semantic_type* const lval)
 
-using token = iv::Myparser::token;
+using token = ptaf::Myparser::token;
 
 #define yyterminate() return(token::END)
 
-#define YY_USER_ACTION loc->step(); loc->columns(yyleng);
+/*#define YY_USER_ACTION loc->step(); loc->columns(yyleng);*/
 %}
 
-%option debug
-%option yyclass="iv::Myscanner"
+%option yyclass="ptaf::Myscanner"
 %option noyywrap
 %option c++
 
