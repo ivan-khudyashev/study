@@ -16,6 +16,8 @@ namespace ptaf{
 
         void parse(const char * const filename);
         void parse(std::istream &iss);
+        void parse(std::string &str);
+        int getTokensCount();
 
     private:
         void parse_helper(std::istream &stream);

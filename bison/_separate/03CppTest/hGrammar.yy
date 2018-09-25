@@ -2,7 +2,6 @@
 Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 */
 %skeleton "lalr1.cc"
-%require "3.1"
 %defines
 %define api.namespace {ptaf}
 %define parser_class_name {Myparser}
@@ -12,7 +11,16 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
         class Mydriver;
         class Myscanner;
     }
+
+#ifndef YY_NULLPTR
+#if defined __cplusplus && 201103L <= __cplusplus
+#define YY_NULLPTR nullptr
+#else
+#define YY_NULLPTR 0
+#endif
+#endif
 }
+
 
 %parse-param { Myscanner &scanner }
 %parse-param { Mydriver &driver }
@@ -38,7 +46,11 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 
 
 %%
-root:   HELLO_TOKEN COMMA_TOKEN ID_TOKEN    { std::cout << "SUCCESS!" << std::endl; }
+root:   HELLO_TOKEN id_list { std::cout << "SUCCESS!" << std::endl; }
+ ;
+id_list: ID_TOKEN
+ | id_list COMMA_TOKEN ID_TOKEN
+ ;
 %%
 
 

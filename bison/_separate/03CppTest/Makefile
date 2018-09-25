@@ -1,5 +1,5 @@
 all:
-	bison3.1 -o hGrammarParser.cc hGrammar.yy
+	bison -o hGrammarParser.cc hGrammar.yy
 	flex -o hGrammarLexer.cc hGrammar.flex
 	g++ -o testHGrammar main.cc mydriver.cc hGrammarParser.cc hGrammarLexer.cc
 

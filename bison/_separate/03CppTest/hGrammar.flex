@@ -12,6 +12,7 @@ using token = ptaf::Myparser::token;
 #define yyterminate() return(token::END)
 
 /*#define YY_USER_ACTION loc->step(); loc->columns(yyleng);*/
+#define YY_USER_ACTION tokensCount++;
 %}
 
 %option yyclass="ptaf::Myscanner"

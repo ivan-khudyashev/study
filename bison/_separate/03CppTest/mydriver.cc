@@ -1,6 +1,8 @@
 #include <cctype>
 #include <fstream>
+#include <sstream>
 #include <cassert>
+#include <string>
 
 #include "mydriver.hh"
 
@@ -27,6 +29,21 @@ void ptaf::Mydriver::parse(std::istream &stream) {
     }
     parse_helper(stream);
     return;
+}
+
+void ptaf::Mydriver::parse(std::string &str) {
+    std::istringstream stream(str);
+    if(! stream.good() && stream.eof()) {
+        std::cerr << "Bad input string" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    parse_helper(stream);
+    return;
+}
+
+int ptaf::Mydriver::getTokensCount()  {
+    return scanner->getTokensCount();
 }
 
 void ptaf::Mydriver::parse_helper(std::istream &stream) {

@@ -5,13 +5,30 @@
 #include <FlexLexer.h>
 #endif
 
+//#include <sstream>
+//#include <string>
 #include "hGrammarParser.hh"
 
 namespace ptaf {
 class Myscanner : public yyFlexLexer {
 public:
     Myscanner(std::istream *in): yyFlexLexer(in) {};
-    virtual ~Myscanner(){};
+    /*
+    Myscanner(const std::string &in) {
+        strInput = new std::istringstream(in);
+        yyFlexLexer(*strInput);
+    };
+    */
+    virtual ~Myscanner(){
+      /*  if(strInput != nullptr) {
+            delete(strInput);
+            strInput = nullptr;
+        }*/
+    };
+
+    int getTokensCount() {
+        return tokensCount;
+    }
 
     using FlexLexer::yylex;
 
@@ -19,6 +36,8 @@ public:
 
 private:
     ptaf::Myparser::semantic_type *yylval = nullptr;
+    int tokensCount = 0;
+    //std::istringstream *strInput = nullptr;
 }; /*end of class Myscanner*/
 
 
