@@ -1,0 +1,1 @@
+select col1, (select * from tt where c > 5) as ccc from t where col1 > 1 limit 10;

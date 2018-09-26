@@ -1,0 +1,1 @@
+fooo' union select 'string' from p where a='1
