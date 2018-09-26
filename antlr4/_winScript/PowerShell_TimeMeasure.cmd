@@ -1,0 +1,1 @@
+Measure-Command {start-process grun "mysql root ..\_sql_tests\mysql.log_from_sofia.sql>null" -wait}
