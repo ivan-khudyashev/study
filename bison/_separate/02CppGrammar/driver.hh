@@ -19,6 +19,5 @@ public:
 
     void scan_begin();
     void scan_end();
-    yy::location location;
 };
 #endif

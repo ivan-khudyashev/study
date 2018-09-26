@@ -13,20 +13,13 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 
 %option noyywrap
 
-%{
-#define YY_USER_ACTION loc.columns(yyleng);
-%}
 %%
-%{
-    yy::location& loc = drv.location;
-    loc.step();
-%}
-[ \t]+          loc.step();
-[\n]+           loc.lines(yyleng); loc.step();
-hello           return yy::parser::make_HELLO_TOKEN(1, loc);
-[[:alpha:]]+    return yy::parser::make_ID_TOKEN(2, loc);
-","             return yy::parser::make_COMMA_TOKEN(loc);
-<<EOF>>         return yy::parser::make_END(loc);
+[ \t]+          /**/ 
+[\n]+           /**/ 
+hello           return yy::parser::make_HELLO_TOKEN(1);
+[[:alpha:]]+    return yy::parser::make_ID_TOKEN(2);
+","             return yy::parser::make_COMMA_TOKEN();
+<<EOF>>         return yy::parser::make_END();
 %%
 void driver::scan_begin() {
     if(file.empty() || file == "-")

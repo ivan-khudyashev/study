@@ -13,8 +13,6 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 }
 // The parsing context.
 %param {driver& drv }
-%locations
-
 
 %code {
 #include "driver.hh"
@@ -31,6 +29,6 @@ Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 %start root;
 root:   HELLO_TOKEN COMMA_TOKEN ID_TOKEN {std::cout << "Recognize str" << std::endl;}
 %%
-void yy::parser::error(const location_type& l, const std::string& s) {
-    std::cerr << std::endl << l << ": " << s << std::endl;
+void yy::parser::error(const std::string& s) {
+    std::cerr << std::endl << s << std::endl;
 }
