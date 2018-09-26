@@ -1,0 +1,3 @@
+%%
+hello printf("<cutted word>");
+%%
