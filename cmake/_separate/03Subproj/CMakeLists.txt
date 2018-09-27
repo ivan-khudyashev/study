@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project(hello)
+set(SOURCE_EXE main.c)
+include_directories(somelib)
+add_executable(test_program ${SOURCE_EXE})
+add_subdirectory(somelib)
+target_link_libraries(test_program slib)
