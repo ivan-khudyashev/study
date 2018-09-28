@@ -10,7 +10,7 @@ add_executable(testparser ${SOURCE_EXE})
 
 add_custom_command(
     OUTPUT hGrammarLexer.cc
-    COMMAND flex -o hGrammarLexer.cc ${CMAKE_CURRENT_BINARY_DIR}/../hGrammar.flex
+    COMMAND flex -o hGrammarLexer.cc ${CMAKE_CURRENT_SOURCE_DIR}/hGrammar.flex
     COMMENT "generating lexer..."
     VERBATIM
 )
@@ -21,7 +21,7 @@ add_custom_target(
 
 add_custom_command(
     OUTPUT hGrammarParser.cc
-    COMMAND bison -o hGrammarParser.cc ${CMAKE_CURRENT_BINARY_DIR}/../hGrammar.yy
+    COMMAND bison -o hGrammarParser.cc ${CMAKE_CURRENT_SOURCE_DIR}/hGrammar.yy
     COMMENT "generating parser ..."
     VERBATIM
 )
