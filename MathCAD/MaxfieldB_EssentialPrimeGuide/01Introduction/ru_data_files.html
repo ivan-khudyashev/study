@@ -1,0 +1,253 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="ch:resourceid" content="resourceid-121-07779CBE" scheme="atiChunkerMeta">
+      
+      
+      
+      
+      
+      
+      <link href="css/styler.css" rel="stylesheet" type="text/css"><style type="text/css">xml {display: none;}</style><script language="javascript" type="text/javascript">     function copyToClipboard(elementID)     {     	var elementToCopy = document.getElementById(elementID);     	if (elementToCopy != null) { 			var textToCopy = elementToCopy.innerHTML; 			textToCopy = textToCopy.replace(/^\s*/, "").replace(/\s*$/, ""); 	    	window.clipboardData.setData('Text',textToCopy);     	}     }</script><style type="text/css">.imgborder{border:1px solid white;}</style><script language="javascript" type="text/javascript"> function doborder(which,color) {if (document.all||document.getElementById) {which.style.borderColor=color}}</script><title>Файлы данных</title>
+   </head>
+   <body>
+      <div xmlns:ch="http://www.arbortext.com/namespace/chunker" class=" x-topic-11-0" id="data_files_ReadingArbitraryDataFormats-02F1F3BC224_44">
+         <div class=" x-title-27-0 x-title-27-2 x-title-27-3 x-title-27-4" combinedFontName="off" id="styler-id1.1.1.4.13.8.1" mcad="Heading2">Файлы данных</div><span class=" x-prolog-1-0"><span class=" x-resourceid-1-0 x-resourceid-1-1" id="data_files_ReadingArbitraryDataFormats-02F1F3BC_resource_416_4">
+               <ch:meta content="resourceid-121-07779CBE" name="ch:resourceid"></ch:meta></span></span><div class=" x-body-3-0">
+            <div class=" x-p-7-0">Для чтения из файлов Excel, текстовых файлов с разделителями, текстовых файлов фиксированной ширины, а также для записи в
+               них имеется две функции.
+               <div class=" x-ul-1-0">
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-13-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0">Функция <span class=" x-mathfunction-2-0">READFILE("file", ["type", colwidths, [rows, [cols, [emptyfill,["decsymb"]]]]])</span> возвращает массив, содержащий данные, записанные в файле <span class=" x-mathvar-2-0">file</span>. Функция <span class=" x-mathfunction-2-0">READFILE</span> используется как основная функция ввода из файлов Excel, текстовых файлов с разделителями и текстовых файлов фиксированной
+                                 ширины.</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-14-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0">Функция <span class=" x-mathfunction-2-0">WRITEFILE("file", M)</span> записывает в файл Excel (<span class=" x-codeph-2-0" combinedFontName="Monospace-combined"><span xmlns="" class="cf-Monospace-combined-European_Alphabets">.xls</span></span> или <span class=" x-codeph-2-0" combinedFontName="Monospace-combined"><span xmlns="" class="cf-Monospace-combined-European_Alphabets">.xlsx</span></span>) или в текстовый файл с разделителями-знаками табуляции (<span class=" x-codeph-2-0" combinedFontName="Monospace-combined"><span xmlns="" class="cf-Monospace-combined-European_Alphabets">.txt</span></span> или <span class=" x-codeph-2-0" combinedFontName="Monospace-combined"><span xmlns="" class="cf-Monospace-combined-European_Alphabets">.dat</span></span>) данные из указанной матрицы <span class=" x-mathvar-2-0">M</span>. 
+                                 <div class=" x-note-1-0 x-note-1-3">
+                                    <div class=" x--ufe-note-1-0 x--ufe-note-1-10" combinedFontName="off">Примечание</div>
+                                    <div class=" x-p-7-0">Следует помнить, что для вычисления выражения в документе <span class=" x-ph-2-0" id="data_files_ReadingArbitraryDataFormats-02F1F3BC_PTCMathc_416_23"><span class=" x-ph-2-0">PTC Mathcad</span></span> оно должно быть записано в виде назначения или запроса на вычисление, например:
+                                    </div>
+                                    <div class=" x-p-7-0">
+                                       <div class=" x-fig-1-0 x-fig-1-2" id="styler-id1.1.1.4.13.8.3.1.1.2.1.7.2.1"><span class=" x-image-1-0&#xA;x-image-1-1"><img alt="Image" src="graphics/writeFILE.png"></span></div>
+                                    </div>
+                                    <div class=" x-p-7-0">или
+                                       <div class=" x-fig-1-0 x-fig-1-2" id="styler-id1.1.1.4.13.8.3.1.1.2.1.7.3.1"><span class=" x-image-1-0&#xA;x-image-1-1"><img alt="Image" src="graphics/writeFILE2.png"></span></div>
+                                    </div>
+                                 </div></span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class=" x-section-1-0" id="styler-id1.1.1.4.13.8.3.2">
+               <div class=" x-title-58-0" combinedFontName="off" id="styler-id1.1.1.4.13.8.3.2.1">Аргументы</div>
+               <div class=" x-ul-2-0">
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-13-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">file</span> — строка, содержащая имя файла или полный путь с именем файла. Неабсолютные пути к файлам считаются заданными по отношению
+                                 к текущей рабочей папке.</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-16-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">type</span> — строка, задающая формат данных, используемый в файле:</span><div class=" x-ul-2-0">
+                                 <table border="0" cellpadding="0" cellspacing="0" class=" x-li-10-0" style="table-layout: fixed; " width="100%">
+                                    <col style="width: 0em">
+                                    <col style="width: 18pt">
+                                    <col>
+                                    <tbody>
+                                       <tr valign="baseline">
+                                          <td align="right"></td>
+                                          <td align="left" style="word-break: keep-all; "><span style="font-family: 'Arial Unicode MS'; ">○</span>&nbsp;
+                                          </td>
+                                          <td><span class=" x-p-4-0">delimited — столбцы данных разделены допустимым разделителем (по умолчанию).</span> Используется разделитель, заданный по умолчанию.
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 <table border="0" cellpadding="0" cellspacing="0" class=" x-li-10-0" style="table-layout: fixed; " width="100%">
+                                    <col style="width: 0em">
+                                    <col style="width: 18pt">
+                                    <col>
+                                    <tbody>
+                                       <tr valign="baseline">
+                                          <td align="right"></td>
+                                          <td align="left" style="word-break: keep-all; "><span style="font-family: 'Arial Unicode MS'; ">○</span>&nbsp;
+                                          </td>
+                                          <td><span class=" x-p-4-0">fixed — данные в столбцах фиксированной ширины.</span></td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 <table border="0" cellpadding="0" cellspacing="0" class=" x-li-10-0" style="table-layout: fixed; " width="100%">
+                                    <col style="width: 0em">
+                                    <col style="width: 18pt">
+                                    <col>
+                                    <tbody>
+                                       <tr valign="baseline">
+                                          <td align="right"></td>
+                                          <td align="left" style="word-break: keep-all; "><span style="font-family: 'Arial Unicode MS'; ">○</span>&nbsp;
+                                          </td>
+                                          <td><span class=" x-p-4-0">Excel — форматы файлов Excel.</span></td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-16-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">colwidths</span> (обязательный для типа fixed, пропускается для других типов) — вектор-столбец размером <span class=" x-mathvar-2-0">n × 1</span>, в котором указано число символов для каждого столбца фиксированной ширины, где n — общее число столбцов в файле.</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-16-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">rows</span> (необязательный) — скаляр, указывающий строку файла, с которой следует начинать чтение, или 2-мерный вектор, указывающий
+                                 диапазон строк (включительно), которые нужно прочитать. Если этот аргумент пропущен, функция <span class=" x-mathfunction-2-0">READFILE</span> прочитает все строки файла.</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-16-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">cols</span> (необязательный) — скаляр, указывающий столбец, с которого следует начинать чтение, или 2-элементный вектор, указывающий
+                                 диапазон столбцов (включительно), которые нужно прочитать из файла. Если этот аргумент пропущен, функция <span class=" x-mathfunction-2-0">READFILE</span> прочитает все столбцы файла.</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-16-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">emptyfill</span> (необязательный) — строка, скаляр или значение NaN (по умолчанию), которыми будут заменены пропущенные записи в файле данных.</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-16-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">decsymb</span> (необязательный) — используемый десятичный разделитель. Можно указать "," (запятую) или "." (точку). Значение по умолчанию
+                                 "." (точка).</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table border="0" cellpadding="0" cellspacing="0" class=" x-li-14-0" style="table-layout: fixed; " width="100%">
+                     <col style="width: 0em">
+                     <col style="width: 18pt">
+                     <col>
+                     <tbody>
+                        <tr valign="baseline">
+                           <td align="right"></td>
+                           <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                           <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">M</span> — матрица из значений, которые требуется записать в указанный файл.</span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class=" x-note-2-0 x-note-2-3">
+                  <div class=" x--ufe-note-1-0 x--ufe-note-1-10" combinedFontName="off">Примечание</div>
+                  <div class=" x-ul-2-0">
+                     <table border="0" cellpadding="0" cellspacing="0" class=" x-li-13-0" style="table-layout: fixed; " width="100%">
+                        <col style="width: 0em">
+                        <col style="width: 18pt">
+                        <col>
+                        <tbody>
+                           <tr valign="baseline">
+                              <td align="right"></td>
+                              <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                              <td><span class=" x-p-4-0"><span class=" x-mathvar-2-0">rows</span> и <span class=" x-mathvar-2-0">cols</span> - это индексы, которые начинаются с 1. Переменная <span class=" x-mathvar-2-0">ORIGIN</span> не учитывается в работе функции <span class=" x-mathfunction-2-0">READFILE</span>.</span></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <table border="0" cellpadding="0" cellspacing="0" class=" x-li-14-0" style="table-layout: fixed; " width="100%">
+                        <col style="width: 0em">
+                        <col style="width: 18pt">
+                        <col>
+                        <tbody>
+                           <tr valign="baseline">
+                              <td align="right"></td>
+                              <td align="left" style="word-break: keep-all; ">•&nbsp;</td>
+                              <td><span class=" x-p-4-0">Пропускать необязательные аргументы можно только начиная с последнего аргумента и в обратном порядке. Например, в функции
+                                    <span class=" x-mathfunction-2-0">READFILE</span> нельзя пропустить rows и указать только cols и emptyfill. Если аргумент rows пропущен, значение аргумента cols будет интерпретировано
+                                    как rows.</span></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class=" x-related-links-1-0 x-related-links-1-10">
+            <div class=" x--ufe-relatedlinks-display-1-0">
+               <div class=" x--ufe-related-links-title-1-0" combinedFontName="Sanserif-combined" id="styler-idu1.1.1.4.13.8.4"><span xmlns="" class="cf-Sanserif-combined-Default">Связанные ссылки</span></div>
+               <div class=" x--ufe-relatedLinklists-1-0">
+                  <div class=" x-linklist-1-0">
+                     <div class=" x-link-1-0"><a href="about_functions_for_reading_and_writing_files.html#about_functions_for_reading_and_writing_files_AboutFileA166_76" id="LINK_data_files_ReadingArbitraryDataFormats-02F1F3BC224_44_about_functions_for_reading_and_writing_files_AboutFileA166_76_2"><span class=" x-linktext-2-0">Сведения о функциях для чтения и записи файлов</span></a></div>
+                     <div class=" x-link-1-0"><a href="about_the_nan_constant.html#about_the_nan_constant_AboutTheNaNNotANumberBuilt-InCons223_20" id="LINK_data_files_ReadingArbitraryDataFormats-02F1F3BC224_44_about_the_nan_constant_AboutTheNaNNotANumberBuilt-InCons223_20_4"><span class=" x-linktext-2-0">Сведения о встроенной константе NaN (Not a Number — не число)</span></a></div>
+                     <div class=" x-link-1-0"><a href="example_reading_and_writing_data_files.html#example_reading_and_writing_data_files_ExampleReadingAnd7_1018" id="LINK_data_files_ReadingArbitraryDataFormats-02F1F3BC224_44_example_reading_and_writing_data_files_ExampleReadingAnd7_1018_6"><span class=" x-linktext-2-0">Пример. Чтение и запись файлов данных</span></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
