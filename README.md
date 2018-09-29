@@ -14,6 +14,7 @@ List of IT technologies for studying (flat list, not classified):
 * java
 * kotlin
 * lua
+* MathCAD
 * mysql
 * python2
 * python3
