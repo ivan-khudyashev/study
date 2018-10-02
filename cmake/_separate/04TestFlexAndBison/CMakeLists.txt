@@ -3,7 +3,7 @@ project(cppparsertest)
 set(SOURCE_EXE 
     main.cc mydriver.cc hGrammarParser.cc hGrammarLexer.cc
 )
-
+find_package(BISON 3.0.4)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/..)
 add_executable(testparser ${SOURCE_EXE})
