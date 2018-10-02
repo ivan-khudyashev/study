@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(test_program)
+if(WIN32)
+    message("Win OS")
+else()
+    message("Not windows OS")
+endif()
+add_executable(test_program main.c)
