@@ -12,18 +12,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-#include <iostream>
-#include <string>
+#include "pattern.hpp"
 
 int main()
 {
     // Init vars
 
     // Program body
-    std::cout<<"Start program";
+    std::cout << "Start program" << std::endl;
 
     // Finished sentences
-    std::cout<<"\nProgram finished\n";
+    std::cout << "Program finished" << std::endl;
     // Close Program
     return 0;
 }
