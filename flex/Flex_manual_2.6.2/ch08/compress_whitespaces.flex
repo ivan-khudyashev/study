@@ -1,7 +1,7 @@
 /*
 Copyright (C) 2018, Khudyashev Ivan, bahek1983@gmail.com
 */
-%option noyywrap
+%option noyywrap noreject
 %{
 #include <stdio.h>
 %}
