@@ -1,0 +1,8 @@
+Project of program
+1. Define heading info
+2. Acquire value from user
+3. Read value from user
+4. Check that user have inputed numeric value
+5. Transform inputed value assuming it in inches into centimeters.
+6. Save transformed value in some variable
+7. Output transformed value to user.
