@@ -116,15 +116,15 @@ void float_type_overflow_info(void)
            (float)(f_max + f_epsilon), d_max + d_epsilon, ld_max + ld_epsilon
     );
     printf("Multiply by 2.0 maximum positive float numbers:"
-           "\n\tfloat = %f\n\tdouble = %f\n\tldouble = %lf\n",
+           "\n\tfloat = %f\n\tdouble = %f\n\tldouble = %Lf\n",
            (float)(f_max * 2.0F), d_max * 2.0, ld_max * 2.0L
     );
     printf("Decrement minimum (normal) positive float numbers by epsilon:"
-           "\n\tfloat = %.100f\n\tdouble = %.100f\n\tldouble = %.100lf\n",
+           "\n\tfloat = %.100f\n\tdouble = %.100f\n\tldouble = %.100Lf\n",
            (float)(f_min - f_epsilon), d_min - d_epsilon, ld_min - ld_epsilon
     );
     printf("Decrement minimum (subnormal) positive float numbers by epsilon:"
-           "\n\tfloat = %.100f\n\tdouble = %.100f\n\tldouble = %.100lf\n",
+           "\n\tfloat = %.100f\n\tdouble = %.100f\n\tldouble = %.100Lf\n",
            (float)(f_true_min - f_epsilon), d_true_min - d_epsilon, ld_true_min - ld_epsilon
     );
 
