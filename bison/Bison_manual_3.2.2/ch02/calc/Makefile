@@ -1,8 +1,8 @@
-all: rpcalc_parser
-	gcc -o rpcalc rpcalc.c -lm
+all: calc_parser
+	gcc -o calc calc.c -lm
 
-rpcalc_parser: rpcalc.y
-	bison -o rpcalc.c rpcalc.y
+calc_parser: calc.y
+	bison -o calc.c calc.y
 
 clean:
-	rm -rf *.o *.out rpcalc.c
+	rm -rf *.o *.out calc.c
