@@ -34,32 +34,3 @@ exp:
  | exp 'n'                              { $$ = -$1; }
  ;
 %%
-int yylex(void)
-{
-    char c = 0;
-    // skip WS
-    while(isblank(c = getchar()));
-    // define is input is FLOAT
-    if(c == '.' || isdigit(c)) {
-        ungetc(c, stdin);
-        scanf("%lf", &yylval);
-        return NUM;
-    }
-    // check end of file
-    if(c == EOF)
-        return 0;
-    // return symbol AS IS
-    return c;
-}
-
-void yyerror(char const *s)
-{
-    fprintf(stderr, "error when parse: %s\n", s);
-}
-
-int main(void)
-{
-    return yyparse();
-}
-
-

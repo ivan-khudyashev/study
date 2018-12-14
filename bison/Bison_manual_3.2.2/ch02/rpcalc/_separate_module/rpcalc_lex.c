@@ -13,7 +13,7 @@ int yylex(void)
     // define is input is FLOAT
     if(c == '.' || isdigit(c)) {
         ungetc(c, stdin);
-        scanf("%lf", yylval);
+        scanf("%lf", &yylval);
         return NUM;
     }
     // check end of file
