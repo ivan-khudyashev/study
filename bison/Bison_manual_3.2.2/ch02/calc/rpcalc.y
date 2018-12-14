@@ -25,6 +25,7 @@ input:
 line:
    '\n'
  | exp '\n'                             { printf("%.10g\n", $1); }
+ | error '\n'                           { yyerrok; }
  ;
 
 
