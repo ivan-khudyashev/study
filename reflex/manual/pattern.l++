@@ -1,0 +1,9 @@
+%o fast dotall
+%o tables-file=lexer_fsm
+%o outfile="lexer.cpp"
+%o matcher=reflex
+rest    \<[Rr]est\>
+%%
+{rest}  out() << "Work!";
+%%
+int main() { return Lexer().lex(); }
