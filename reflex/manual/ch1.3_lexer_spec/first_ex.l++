@@ -1,0 +1,8 @@
+%o fast
+%o tables-file=fsm_lexer
+%o outfile="test_lexer.cpp"
+rest    \<[Rr]est\>
+%%
+{rest}  out() << "Work!";
+%%
+int main() { return Lexer().lex(); }

@@ -1,0 +1,26 @@
+# INPUT params
+LEXER_NAME=first_ex
+LEXER_CPP=test_lexer
+FSM_CPP=fsm_lexer
+CPP_EXTENSION=cpp
+REFLEX_EXTENTION=l++
+# Construct params
+LEXER_CPP_FILE=${LEXER_CPP}.${CPP_EXTENSION}
+FSM_CPP_FILE=${FSM_CPP}.${CPP_EXTENSION}
+SRC_LEXER_FILE=${LEXER_NAME}.${REFLEX_EXTENTION}
+# Compiler options
+CC=g++
+CC_LIB_DIR=/home/pt/tools/reflex/lib
+CC_INC_DIR=/home/pt/tools/reflex/include
+#Targets
+all: lexer
+
+lexer: genlexer
+	${CC} -o ${LEXER_NAME}.o -L ${CC_LIB_DIR} -I ${CC_INC_DIR} ${LEXER_CPP_FILE} ${FSM_CPP_FILE} -lreflex
+
+genlexer: ${SRC_LEXER_FILE}
+	reflex ${SRC_LEXER_FILE}
+
+clean:
+	rm -rf *.cpp *.c++ *.cc
+	rm -rf *.o *.out *.a *.so
