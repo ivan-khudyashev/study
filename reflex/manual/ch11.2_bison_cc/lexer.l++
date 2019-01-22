@@ -2,17 +2,19 @@
     #include "parser.hpp"
 %}
 %o fast dotall noyywrap bison-cc
-%o namespace=yy
+%o namespace=ptaf
+%o bison-cc-namespace=ptaf
+%o bison-cc-parser=parser
 %o lexer=Lexer
 %o lex=yylex
 %o matcher=reflex
 %%
 [0-9]+              { 
                         std::cout << "lexer: number" << std::endl;
-                        return yy::parser::token::CONST_NUMBER;
+                        return ptaf::parser::token::CONST_NUMBER;
                     }
 \"([^\\"]|\\\")*\"   {
                         std::cout << "lexer: string" << std::endl;
-                        return yy::parser::token::CONST_STRING;
+                        return ptaf::parser::token::CONST_STRING;
                     }
 %%

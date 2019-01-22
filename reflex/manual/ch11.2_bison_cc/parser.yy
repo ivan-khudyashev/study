@@ -3,14 +3,15 @@
 %skeleton "lalr1.cc"
 %require "3.2"
 %language "c++"
+%define api.namespace {ptaf}
 
 %code requires{
-    namespace yy {
+    namespace ptaf {
       class Lexer;
     }
 }
 
-%parse-param {yy::Lexer& lexer }
+%parse-param {ptaf::Lexer& lexer }
 
 %code {
     #include "lexer.h"
@@ -31,14 +32,14 @@ any_const: CONST_NUMBER
  | CONST_STRING
  ;
 %%
-void yy::parser::error(const std::string& msg)
+void ptaf::parser::error(const std::string& msg)
 {
     std::cerr << msg << std::endl;
 }
 int main()
 {
-    yy::Lexer l;
-    yy::parser p(l);
+    ptaf::Lexer l;
+    ptaf::parser p(l);
     int ret_val = p();
     std::cout << "ret_val = " << ret_val << std::endl;
     return ret_val;
