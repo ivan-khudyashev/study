@@ -6,7 +6,7 @@
 
 %code requires{
     namespace yy {
-        class Lexer;
+      class Lexer;
     }
 }
 
@@ -17,13 +17,8 @@
     #undef yylex
     #define yylex lexer.yylex
 }
-
-%union {
-    int num;
-    char* str;
-}
-%token <num> CONST_NUMBER
-%token <str> CONST_STRING
+%token  CONST_NUMBER
+%token  CONST_STRING
 %%
 root: expr { std::cout << "Successfully recognize!" << std::endl;}
  ;

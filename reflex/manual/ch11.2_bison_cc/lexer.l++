@@ -8,7 +8,6 @@
 %o matcher=reflex
 %%
 [0-9]+              { 
-                        yylval.num = strtol(text(), NULL, 10);
                         std::cout << "lexer: number" << std::endl;
                         return yy::parser::token::CONST_NUMBER;
                     }
