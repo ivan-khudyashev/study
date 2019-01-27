@@ -4,9 +4,12 @@
 int main(void)
 {
     
-    printf("Start Program\n\n");
+    //printf("Start Program\n\n");
+    const char* printf = "hello";
+    puts(printf);
+
     // program here
 
-    printf("\nFinish Program!\n");
+    //printf("\nFinish Program!\n");
     return 0;
 }
