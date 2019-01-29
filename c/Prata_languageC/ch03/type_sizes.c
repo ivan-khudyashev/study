@@ -6,7 +6,8 @@ int main(void)
     
     printf("Start Program\n\n");
     // program here
-
+    
+    printf("size of short int = %zd\n", sizeof(short int));
     printf("size of int = %zd\n", sizeof(int));
     printf("size of long = %zd\n", sizeof(long));
     printf("size of long long = %zd\n", sizeof(long long));

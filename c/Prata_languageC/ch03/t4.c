@@ -6,6 +6,8 @@ int main(void)
     
     printf("Start Program\n\n");
     // program here
+    unsigned short int a = 1000000;
+    printf("try save 1_000_000 in unsigned short and get: %hu", a);
 
     printf("\nFinish Program!\n");
     return 0;
