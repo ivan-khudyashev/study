@@ -1,7 +1,7 @@
 /*
 cpp-file pattern for c++ study
 
-Copyright (C) 2018,  Khudyashev Ivan
+Copyright (C) 2018-2019,  Khudyashev Ivan
 GNU GPL https://www.gnu.org/licenses/gpl-3.0.ru.html
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
