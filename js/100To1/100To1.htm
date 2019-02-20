@@ -11,19 +11,22 @@
 	<style>
 		#rootSection { position: relative; height: 100%; width: 100%; }
 		#headerSection { position: absolute; top: 0; left: 0; width: 70%; height: 20%; }
-		#mainBody { position: absolute; top: 25%; left: 0; width: 70%; height: 75%; }
+		#mainBody { position: absolute; top: 20%; left: 0; width: 70%; height: 75%; }
+		#checkAnswerField { position: absolute; top: 90%; left: 0; width: 70%; height: 10%; text-align: center; }
+		#checkedAnswer { width: 35%; }
 		#modesList { position: absolute; top: 0; left: 75%; width: 25%; height: 100%; }
 		#modesListTable {position: absolute; margin: auto; left:40%; width: 60%; height: 100%; }
 		#questionField { position: absolute; margin: auto; top: 0; height: 50%; width: 100%; text-align: center; }
-		#commonPoints { position: absolute; margin: auto; top: 55%; height: 40%; width: 100%; text-align: center; }
+		#commonPoints { display:none; position: absolute; margin: auto; top: 55%; height: 40%; width: 100%; text-align: center; }
 		#leftPointPane { position: absolute; margin: auto; top: 10%; height: 90%; left: 0; width: 25%; text-align: center; }
 		#centralAnswerPane { position: absolute; margin: auto; top: 10%; height: 90%; left: 25%; width: 45%; text-align: center; }
 		#rightPointPane { position: absolute; margin: auto; top: 10%; height: 90%; left: 75%; width: 25%; text-align: center; }
-		#leftTeamPoint, #rightTeamPoint { position: absolute; margin: auto; top: 5%; height: 30%; left: 0; width: 100%; text-align: center; }
+		<!-- #leftTeamPoint, #rightTeamPoint { position: absolute; margin: auto; top: 5%; height: 30%; left: 0; width: 100%; text-align: center; } -->
 		#leftTeamName, #rightTeamName { position: absolute; margin: auto; top: 35%; height: 25%; left: 0; width: 100%; text-align: center; }
 		#leftTeamMiss, #rightTeamMiss { position: absolute; margin: auto; top: 60%; height: 40%; left: 0; width: 100%; text-align: center; }
 		.modeItemCell { position: absolute; top: 0; left: 0; height: 100%; width: 100%;}
-		.gameButton { position: absolute; width: 40%; border-style: outset; text-align: center;}
+		.gameButtonFree { position: absolute; width: 40%; border-style: outset; text-align: center;}
+		.gameButtonPress { position: absolute; width: 40%; border-style: inset; text-align: center;}
 		#answerList { position: absolute; width: 100%; height: 100%; left: 0; right: 0;}
 		.closeAnswer { position: absolute; width: 100%; height: 100% text-align: center; border-style: solid; border-width: 3px; background-color: Grey;}
 	</style>
@@ -33,20 +36,23 @@
 	<div id="rootSection">
 		<div id="headerSection">
 			
-				<div id="questionField">Здесь будет вопрос</div>
-				<div id="commonPoints">Здесь будут нейтральные очки</div>
-			
-		</div>
-		<div id="mainBody">
-			<div id="leftPointPane">
 				<div id= "leftTeamPoint">
 				0
 				</div>
+				<div id="questionField">Здесь будет вопрос</div>
+				<div id="commonPoints">0</div>
+				<div id= "rightTeamPoint">0</div>
+				
+			
+		</div>
+		<div id="mainBody">
+			<div id="leftPointPane">				
 				<div id="leftTeamName">
 				Команда 1
 				</div>
 				<div id="leftTeamMiss">
 				</div>
+				
 			</div>
 			
 			
@@ -75,7 +81,6 @@
 			
 			
 			<div id="rightPointPane">
-				<div id= "rightTeamPoint">0</div>
 				<div id="rightTeamName">
 				Команда 2
 				</div>
@@ -83,22 +88,27 @@
 				</div>
 			</div>
 		</div>
+		<div id="checkAnswerField">
+			<button onclick="checkAnswer(1)">Проверить для 1 команды</button>
+			<input type="text" id="checkedAnswer" name="Проверить вариант:" />
+			<button onclick="checkAnswer(2)">Проверить для 2 команды</button>
+		</div>
 		<div id="modesList">
 			<table id="modesListTable">
-				<tr style="position: absolute; top: 0; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('simple')">
-					<p class="gameButton" onclick="swithGame('simpleGame')">Простая игра</p>
+				<tr style="position: absolute; top: 0; height:20%; width:100%"><td class="modeItemCell">
+					<p id="simpleGame" class="gameButtonFree" onclick="swithGame('simpleGame')">Простая игра</p>
 				</td></tr>
-				<tr style="position: absolute; top: 20%; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('double')">
-					<p class="gameButton" onclick="swithGame('doubleGame')">Двойная игра</p>
+				<tr style="position: absolute; top: 20%; height:20%; width:100%"><td class="modeItemCell">
+					<p id="doubleGame" class="gameButtonFree" onclick="swithGame('doubleGame')">Двойная игра</p>
 				</td></tr>
-				<tr style="position: absolute; top: 40%; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('triple')">
-					<p class="gameButton" onclick="swithGame('tripleGame')">Тройная игра</p>
+				<tr style="position: absolute; top: 40%; height:20%; width:100%"><td class="modeItemCell">
+					<p id="tripleGame" class="gameButtonFree" onclick="swithGame('tripleGame')">Тройная игра</p>
 				</td></tr>
-				<tr style="position: absolute; top: 60%; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('revirse')">
-					<p class="gameButton" onclick="swithGame('reverseGame')">Игра наоборот</p>
+				<tr style="position: absolute; top: 60%; height:20%; width:100%"><td class="modeItemCell">
+					<p id="reverseGame" class="gameButtonFree" onclick="swithGame('reverseGame')">Игра наоборот</p>
 				</td></tr>
-				<tr style="position: absolute; top: 80%; height:20%; width:100%"><td class="modeItemCell" onclick="bigGame('')">
-					<p class="gameButton" onclick="swithGame('bigGame')">Большая игра</p>
+				<tr style="position: absolute; top: 80%; height:20%; width:100%"><td class="modeItemCell">
+					<p id="bigGame" class="gameButtonFree" onclick="swithGame('bigGame')">Большая игра</p>
 				</td></tr>
 			</table>
 		</div>

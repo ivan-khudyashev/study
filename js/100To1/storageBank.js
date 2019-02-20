@@ -55,6 +55,9 @@ function defineQueries()
 		dataBigGame
 	];
 	
-	defineQueries.qInfo = {data: dataStorage, currentGame: "", isEndedGame: false};
+	// Define Games' ID
+	var gameIdentifier = {simpleGame: 0, doubleGame: 1, tripleGame: 2, reverseGame: 3, bigGame: 4}
+	
+	defineQueries.qInfo = {data: dataStorage, currentGame: "", isEndedGame: false, gameId: gameIdentifier, gameIdentifierIndex: null};
 	defineQueries.transferValues = {}
 }
