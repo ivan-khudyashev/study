@@ -4,20 +4,11 @@ function defineLayout() {
 		throw new OwnGameException("Отсутствует элемент HTML для загрузки таблицы с вопросами");
 	if(defineQueries!= null) {
 		defineQueries();
-		/*
-		if(defineQueries.qInfo!= null) 
-			alert(
-				"cat[0] = " + defineQueries.qInfo.categories[0] + "\n question[0][0]" + 
-				defineQueries.qInfo.questions[0][0].question + "\n price[1][3]" + 
-				defineQueries.qInfo.questions[1][3].price
-			);
-		*/
 	}
 	else 
 		throw new OwnGameException("На загрузилась функция определения");
 	var categoriesCount = defineQueries.qInfo.categories.length;
 	var questionsCount = defineQueries.qInfo.questions[0].length;
-	// alert("questionsCount = " + questionsCount);
 	var tblElementContent = "<table id='tableQuestions'>";
 	var indexI = 0, indexJ = 0;
 	while(indexI < categoriesCount) {
@@ -26,7 +17,10 @@ function defineLayout() {
 		indexJ = 0;
 		while(indexJ < questionsCount) {
 			tblElementContent += (
-				"\n<td class='questionField' onclick='pressQuestionField(" 
+				"\n<td class='questionField' id='qtd" 
+				+ indexI.toString()
+				+ indexJ.toString()
+				+ "' onclick='pressQuestionField(" 
 				+ indexI.toString() 
 				+ ", "
 				+ indexJ.toString()
@@ -59,10 +53,13 @@ function pressQuestionField(categoryNum, questionNum) {
 	}
 }
 
-function reactOnCloseAnswer(aquirePoints) {
+function reactOnCloseAnswer(aquirePoints, catNum, qNum) {
 	if( aquirePoints != 0) {
 		var pointsNumberValueElem = window.document.getElementById("pointsNumberValue");
 		aquirePoints += Number(pointsNumberValueElem.innerHTML);
 		pointsNumberValueElem.innerHTML = aquirePoints;
 	}
+	var tdid = "qtd" + catNum.toString() + qNum.toString();
+	//alert(tdid);
+	window.document.getElementById(tdid).innerHTML = "";
 }
