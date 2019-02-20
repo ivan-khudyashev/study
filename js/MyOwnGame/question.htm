@@ -2,13 +2,22 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="w3.css">
 	<script src="processQuestions.js"></script>
 	<title id="titleQueryWindow">Вопрос на 0 очков</title>
 </head>
-<body>
-<div id="questionBody"></div>
-<button onclick='correctAnswer()'>Правильный ответ</buttion>
-<button onclick='wrongAnswer()'>Ответ неверен</buttion>
+<body class="w3-indigo">
+	<div id="questionBody" class="w3-container w3-xxxlarge" style="text-shadow:1px 1px"></div>
+	<div id="buttonsChoose" class="w3-container">
+		<button onclick='correctAnswer()'>Правильный ответ</buttion>
+		<button onclick='wrongAnswer()'>Ответ неверен</buttion>
+	</div>
+	<div class="w3-cell-row">
+		<div id="questionAnswer" class="w3-panel w3-round-xlarge w3-light-blue"><p></p></div>
+	</div>
+	<div id="questionAnswerButton" class="w3-container">
+		<button id="showAnswerButton" onclick='showAnswer()'>Показать ответ</button>
+	</div>
 	<script>
 		window.onload=defineQueryWindow();
 	</script>

@@ -7,16 +7,29 @@
 	</title>
 	<script src="storageBank.js"></script>
 	<script src="errors.js"></script>
-	<!-- <script src="showModalDialog.js"></script> -->
 	<script src="engine.js"></script>
+	<style>
+		th.categoryHeader {color:White; background-color: #4058D1;font-size: 2em;}
+		td.questionField {color: Yellow; background-color: #4058D1; text-align: center; font-size: 2em;}
+		tr.qTableRow {width: 100%;}
+		#tableQuestions {width: 100%; height: 100%; border-spacing: 7px;}
+		body { background-color: #4020D1; height: 100%;}
+		html { height: 100%;}
+	</style>
 </head>
 <body id="ownGameBody">
-	<p id="pTitle">
-	Some title here
-	</p>
-	<p id='pointsNumber'><span id='pointsNumberValue' style='color:Red;font-weight:bold;font-size:1.4em;'>0</span> Очков</p>
-	<div id="questionsTable">
+	<div style="float: top; height:10%;">
+		<div style="float:center; text-align: center; color: White;">
+			<h1 id="pTitle" >
+			И&amp;Е Игра
+			</h1>
+		</div>
 	</div>
+	<div style="float: top; height:5%; color: White;">
+		<p id='pointsNumber'><span id='pointsNumberValue' style='color:Wheat;font-weight:bold;font-size:3em;'>0</span>
+		Очков. Цель:<span id='pointsPrizeNumberValue' style='color:SpringGreen ;font-weight:bold;font-size:3em;'>508</span> очков</p>
+	</div>
+	<div id="questionsTable" style="float: center; height:80%;"></div>
 	<script>
 	try {
 		window.onload=defineLayout()
