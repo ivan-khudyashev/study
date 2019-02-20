@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>
+	И&amp;Е Игра
+	</title>
+	<script src="storageBank.js"></script>
+	<script src="errors.js"></script>
+	<!-- <script src="showModalDialog.js"></script> -->
+	<script src="engine.js"></script>
+</head>
+<body id="ownGameBody">
+	<p id="pTitle">
+	Some title here
+	</p>
+	<p id='pointsNumber'><span id='pointsNumberValue' style='color:Red;font-weight:bold;font-size:1.4em;'>0</span> Очков</p>
+	<div id="questionsTable">
+	</div>
+	<script>
+	try {
+		window.onload=defineLayout()
+	}
+	catch (e) {
+		alert("Error of " + e.name + " with message: \n" + e.message);
+	}
+	</script
+</body>
+</html>
