@@ -5,18 +5,27 @@
 	<title>
 	100 К 1
 	</title>
+	<script src="storageBank.js"></script>
+	<script src="errors.js"></script>
+	<script src="engine.js"></script>
 	<style>
 		#rootSection { position: relative; height: 100%; width: 100%; }
 		#headerSection { position: absolute; top: 0; left: 0; width: 70%; height: 20%; }
 		#mainBody { position: absolute; top: 25%; left: 0; width: 70%; height: 75%; }
 		#modesList { position: absolute; top: 0; left: 75%; width: 25%; height: 100%; }
-		#modesListTable {position: absolute; margin: auto; left:10%; width: 80%; height: 100%; }
+		#modesListTable {position: absolute; margin: auto; left:40%; width: 60%; height: 100%; }
 		#questionField { position: absolute; margin: auto; top: 0; height: 50%; width: 100%; text-align: center; }
 		#commonPoints { position: absolute; margin: auto; top: 55%; height: 40%; width: 100%; text-align: center; }
 		#leftPointPane { position: absolute; margin: auto; top: 10%; height: 90%; left: 0; width: 25%; text-align: center; }
 		#centralAnswerPane { position: absolute; margin: auto; top: 10%; height: 90%; left: 25%; width: 45%; text-align: center; }
 		#rightPointPane { position: absolute; margin: auto; top: 10%; height: 90%; left: 75%; width: 25%; text-align: center; }
-		#smth {}
+		#leftTeamPoint, #rightTeamPoint { position: absolute; margin: auto; top: 5%; height: 30%; left: 0; width: 100%; text-align: center; }
+		#leftTeamName, #rightTeamName { position: absolute; margin: auto; top: 35%; height: 25%; left: 0; width: 100%; text-align: center; }
+		#leftTeamMiss, #rightTeamMiss { position: absolute; margin: auto; top: 60%; height: 40%; left: 0; width: 100%; text-align: center; }
+		.modeItemCell { position: absolute; top: 0; left: 0; height: 100%; width: 100%;}
+		.gameButton { position: absolute; width: 40%; border-style: outset; text-align: center;}
+		#answerList { position: absolute; width: 100%; height: 100%; left: 0; right: 0;}
+		.closeAnswer { position: absolute; width: 100%; height: 100% text-align: center; border-style: solid; border-width: 3px; background-color: Grey;}
 	</style>
 </head>
 <body style="height: 100%;">
@@ -29,21 +38,79 @@
 			
 		</div>
 		<div id="mainBody">
-			<div id="leftPointPane">Здесь будет панель левого игрока</div>
-			<div id="centralAnswerPane">Здесь будет центральная панель</div>
-			<div id="rightPointPane">Здесь будет панель правого игрока</div>
+			<div id="leftPointPane">
+				<div id= "leftTeamPoint">
+				0
+				</div>
+				<div id="leftTeamName">
+				Команда 1
+				</div>
+				<div id="leftTeamMiss">
+				</div>
+			</div>
+			
+			
+			<div id="centralAnswerPane">
+				<table id="answerList">
+					<tr style="position: absolute; top:0; height: 16%; width: 100%; left: 0;">
+						<td id="answer1" class="closeAnswer">1</td>
+					</tr>
+					<tr style="position: absolute; top:16%; height: 16%; width: 100%; left: 0;">
+						<td id="answer2" class="closeAnswer">2</td>
+					</tr>
+					<tr style="position: absolute; top:32%; height: 16%; width: 100%; left: 0;">
+						<td id="answer3" class="closeAnswer">3</td>
+					</tr>
+					<tr style="position: absolute; top:48%; height: 16%; width: 100%; left: 0;">
+						<td id="answer4" class="closeAnswer">4</td>
+					</tr>
+					<tr style="position: absolute; top:64%; height: 16%; width: 100%; left: 0;">
+						<td id="answer5" class="closeAnswer">5</td>
+					</tr>
+					<tr style="position: absolute; top:80%; height: 16%; width: 100%; left: 0;">
+						<td id="answer6" class="closeAnswer">6</td>
+					</tr>
+				</table>
+			</div>
+			
+			
+			<div id="rightPointPane">
+				<div id= "rightTeamPoint">0</div>
+				<div id="rightTeamName">
+				Команда 2
+				</div>
+				<div id="rightTeamMiss">
+				</div>
+			</div>
 		</div>
 		<div id="modesList">
 			<table id="modesListTable">
-				<tr><td class="modeItem">Простая игра</td></tr>
-				<tr><td class="modeItem">Двойная игра</td></tr>
-				<tr><td class="modeItem">Тройная игра</td></tr>
-				<tr><td class="modeItem">Игра наоборот</td></tr>
-				<tr><td class="modeItem">Большая игра</td></tr>
+				<tr style="position: absolute; top: 0; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('simple')">
+					<p class="gameButton" onclick="swithGame('simpleGame')">Простая игра</p>
+				</td></tr>
+				<tr style="position: absolute; top: 20%; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('double')">
+					<p class="gameButton" onclick="swithGame('doubleGame')">Двойная игра</p>
+				</td></tr>
+				<tr style="position: absolute; top: 40%; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('triple')">
+					<p class="gameButton" onclick="swithGame('tripleGame')">Тройная игра</p>
+				</td></tr>
+				<tr style="position: absolute; top: 60%; height:20%; width:100%"><td class="modeItemCell" onclick="simpleGame('revirse')">
+					<p class="gameButton" onclick="swithGame('reverseGame')">Игра наоборот</p>
+				</td></tr>
+				<tr style="position: absolute; top: 80%; height:20%; width:100%"><td class="modeItemCell" onclick="bigGame('')">
+					<p class="gameButton" onclick="swithGame('bigGame')">Большая игра</p>
+				</td></tr>
 			</table>
 		</div>
 	
 	</div>
-	
+	<script>
+	try {
+		window.onload=defineLayout()
+	}
+	catch (e) {
+		alert("Error of " + e.name + " with message: \n" + e.message);
+	}
+	</script
 </body>
 </html>
