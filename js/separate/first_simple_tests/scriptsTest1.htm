@@ -1,0 +1,35 @@
+<head>
+	<title>
+	Scripts Tests
+	</title>
+	<script>
+		// Output variables
+		var somevar = "Hello, JS!"
+		
+		// Actions!
+		/*
+		x = Math.PI;
+		cx = Math.cos(x);
+		somevar = "cox(\u03C0) = " + cx;
+		*/
+		/*
+		function f(){return 1;}
+		somevar = delete f;
+		*/
+		var o = {x:5, y:3, z:10};
+		var v = [], n = []; var i = 0;
+		for (var nn in o) v[i] = nn, n[i] = o[v[i]],  i++;
+		// for(v[i++] in o) ;
+		somevar = "";
+		// for(i = 0; i < v.length; i++) somevar += (v[i].toString() + " --- " + n[i]);
+		for(i in v) somevar += i;
+		// Output
+		alert(somevar);
+		console.log(somevar)
+	</script>
+</head>
+<body>
+	<p>
+	Some text here
+	</p>
+</body>

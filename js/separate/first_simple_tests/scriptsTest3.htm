@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Scripts Tests
+	</title>
+</head>
+<body>
+	<p>
+	Some text here
+	</p>
+	<p id="timestamp">
+	Output paragraph
+	</p>
+</body>
+	<script type="text/javascript">
+		// Output variables
+		var timestamp = document.getElementById("timestamp");
+		// Actions!
+		//if(timestamp.firstChild == null)
+		timestamp.onclick = function() { this.innerHTML = new Date().toString();}
+		// Output
+	</script>
+	<a href="javascript:void window.open('about:blank');">Open Window</a>
+
+</html>

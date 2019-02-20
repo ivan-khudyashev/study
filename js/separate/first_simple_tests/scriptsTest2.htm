@@ -1,0 +1,29 @@
+<head>
+	<title>
+	Scripts Tests
+	</title>
+	<script>
+		// Output variables
+		var somevar;
+		var a = [2, 3, 5, 7];
+		
+		// Actions!
+		somevar = a.every(isPrime);
+		// Output
+		alert(somevar);
+		console.log(somevar)
+		function isPrime(p)
+		{
+			if(p==3 || p == 2) return true;
+			barrier = Math.ceil(Math.sqrt(p));
+			for(var i = 2; i < barrier; i++)
+				if(p % i == 0) return false;
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<p>
+	Some text here
+	</p>
+</body>
