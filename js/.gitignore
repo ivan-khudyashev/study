@@ -1,1 +1,8 @@
+# Temporary files
 *.swp
+# npm debug journal
+npm-debug.log*
+# project's dependancies
+node_modules
+# OSX folder's attributes
+.DS_Store
