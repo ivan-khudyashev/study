@@ -6,3 +6,5 @@ npm-debug.log*
 node_modules
 # OSX folder's attributes
 .DS_Store
+# dir with generated ES5 from ES6 code
+dist
