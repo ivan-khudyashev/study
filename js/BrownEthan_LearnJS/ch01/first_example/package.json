@@ -1,0 +1,20 @@
+{
+  "name": "first_example",
+  "version": "1.0.0",
+  "description": "first test",
+  "main": "main.js",
+  "dependencies": {
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "study"
+  ],
+  "author": "Khudyashev Ivan",
+  "license": "GPL-3.0-or-later"
+}
