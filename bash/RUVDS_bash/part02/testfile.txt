@@ -1,0 +1,7 @@
+hello world!
+This is a second line in file.
+Here some literals: 
+ 5      - number
+ 1.0    - decimal
+ "ab"   - string
+ [a, b] - array
