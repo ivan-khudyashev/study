@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Copyright (C) Khudyashev Ivan, 2019, bahek1983@gmail.com
 filename=testfile.txt
 IFS=$'\n'
