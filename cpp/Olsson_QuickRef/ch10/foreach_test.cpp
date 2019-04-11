@@ -1,5 +1,5 @@
 /*
-hpp-file pattern for c++ study
+cpp-file pattern for c++ study
 
 Copyright (C) 2018-2019,  Khudyashev Ivan
 GNU GPL https://www.gnu.org/licenses/gpl-3.0.ru.html
@@ -12,7 +12,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-#pragma once
-
 #include <iostream>
-#include <string>
+using namespace std;
+
+int main()
+{
+    // Init vars
+    int a[] = {5, 8, 11, 1, 26, 14, 9};
+    // Program body
+    cout << "\nStart program\n";
+    for(int &i: a) {
+        cout << i << ", ";
+    }
+
+    // Finished sentences
+    cout << "\nProgram finished\n";
+    // Close Program
+    return 0;
+}

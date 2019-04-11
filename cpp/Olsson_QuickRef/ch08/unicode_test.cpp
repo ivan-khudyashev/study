@@ -12,17 +12,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-#include "pattern.hpp"
+#include <iostream>
+using namespace std;
 
 int main()
 {
     // Init vars
-
+    string s = u8"Greek letter pi: \u03C0\nMath pi: \u213C";
+    string s1 = "This is a simple string, greek letter pi: \u03C0";
+    char s2[] = "This is C-string, greek letter pi: \u03C0";
     // Program body
-    std::cout << "Start program" << std::endl;
+    cout << "\nStart program\n";
+    cout << s << "\n";
+    cout << s1 << "\n";
+    cout << s2 << "\n";
 
     // Finished sentences
-    std::cout << "Program finished" << std::endl;
+    cout << "\nProgram finished\n";
     // Close Program
     return 0;
 }
