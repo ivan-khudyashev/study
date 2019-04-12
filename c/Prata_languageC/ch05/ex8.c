@@ -5,22 +5,22 @@ int input_m(const char input_m_str[]);
 int main(void)
 {
     int m,n,r; // (r, d) = m div n, r = m%n, d=m/n
-    const char greeting_str[] = "This program computes moduli: r = m%n";
-    const char input_n_str[] = "Input n: ";
-    const char input_m_str[] = "Input m (<=0 to quit): ";
-    const char error_n_val_str[] = "Wrong n value, must n<>0. Exit!";
+    const char GREETING_STR[] = "This program computes moduli: r = m%n";
+    const char INPUT_N_STR[] = "Input n: ";
+    const char INPUT_M_STR[] = "Input m (<=0 to quit): ";
+    const char ERROR_N_VAL_STR[] = "Wrong n value, must n<>0. Exit!";
     printf("Start Program\n\n");
     // program here
-    printf("%s\n%s", greeting_str, input_n_str);
+    printf("%s\n%s", GREETING_STR, INPUT_N_STR);
     scanf("%d", &n);
     if(n == 0) {
-        printf("%s", error_n_val_str);
+        printf("%s", ERROR_N_VAL_STR);
         return 1;
     }
-    m = input_m(input_m_str);
+    m = input_m(INPUT_M_STR);
     while(m > 0) {
         printf("%d %% %d is %d\n", m, n, m%n);
-        m = input_m(input_m_str);
+        m = input_m(INPUT_M_STR);
     }
 
     printf("\nFinish Program!\n");

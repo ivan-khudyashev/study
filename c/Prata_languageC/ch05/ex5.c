@@ -3,14 +3,14 @@
 
 int main(void)
 {
-    const int max_border = 100;
+    const int MAX_BORDER = 100;
     int upper_border = 20, idx = 0, sum = 0;
     printf("Start Program\n\n");
     // program here
     printf("Input upper border (value to sum at): ");
     scanf("%d", &upper_border);
-    if(upper_border < 1) {
-        printf("Wrong upper boarder value, must be from 1 to %d. Exit!\n", max_border);
+    if(upper_border < 1 || upper_border > MAX_BORDER) {
+        printf("Wrong upper boarder value, must be from 1 to %d. Exit!\n", MAX_BORDER);
         return 1;
     }
     while(idx++ < upper_border) {

@@ -4,15 +4,15 @@
 int user_input();
 int main(void)
 {
-    const int days_in_week = 7;
+    const int DAYS_IN_WEEK = 7;
     int input_days = 0;
     int week, day;
     printf("Start Program\n\n");
     // program here
     input_days = user_input();
     while(input_days > 0) {
-        week = input_days / days_in_week;
-        day = input_days % days_in_week;
+        week = input_days / DAYS_IN_WEEK;
+        day = input_days % DAYS_IN_WEEK;
         printf("%d day(s) are %d weeks, %d day(s)\n", input_days, week, day);
         input_days = user_input();
     }
@@ -22,9 +22,9 @@ int main(void)
 
 int user_input()
 {
-    const char invite_input[] = "Input days(0 or less for exit): ";
+    const char INVITE_INPUT[] = "Input days(0 or less for exit): ";
     int days = 0; // finish if bad input
-    printf("%s", invite_input);
+    printf("%s", INVITE_INPUT);
     scanf("%d", &days);
     return days;
 }

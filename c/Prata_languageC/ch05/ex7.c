@@ -4,13 +4,13 @@
 void cube_and_print(double x, const char var_name[]);
 int main(void)
 {
-    const char var_name[] = "x";
+    const char VAR_NAME[] = "x";
     double x = 0.;
     printf("Start Program\n\n");
     // program here
-    printf("Input number %s = ", var_name);
+    printf("Input number %s = ", VAR_NAME);
     scanf("%lf", &x);
-    cube_and_print(x, var_name);
+    cube_and_print(x, VAR_NAME);
 
     printf("\nFinish Program!\n");
     return 0;
