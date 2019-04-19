@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 # Copyright (C) Khudyashev Ivan, 2019, bahek1983@gmail.com
-echo "Pattern bash-script"
+main(){
+    printf "Start script\n"
+    printf "End script\n"
+}
+
+main
