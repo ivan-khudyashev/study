@@ -3,13 +3,19 @@
 set -o nounset # save of using not defined variables
 set -o errexit # save from ignoring error-exit of commands
 
-primary_action() {
+output_secret() {
+    docker run --rm dockerinaction/ch3_ex2_huntanswer
+}
+
+scavenger_act() {
+    docker run -it --rm dockerinaction/ch3_ex2_hunt
 }
 
 # Primary function for execution
 main() {
     printf "%s\n" "## Start script ##"
-    primary_action
+    output_secret
+    scavenger_act
     printf "%s\n" "## End script ##"
 }
 
