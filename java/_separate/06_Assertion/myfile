@@ -1,0 +1,8 @@
+сен 18, 2017 12:20:16 PM TestLogging main
+INFO: Start action
+сен 18, 2017 12:21:24 PM TestLogging main()
+FINER: ENTRY
+сен 18, 2017 12:21:24 PM TestLogging main
+INFO: Start action
+сен 18, 2017 12:21:26 PM TestLogging main()
+FINER: RETURN

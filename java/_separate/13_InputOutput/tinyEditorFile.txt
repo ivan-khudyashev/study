@@ -1,0 +1,2 @@
+hello world
+here not bad test for file's usage in Java
