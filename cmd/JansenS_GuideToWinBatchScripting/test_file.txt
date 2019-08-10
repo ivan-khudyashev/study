@@ -1,0 +1,13 @@
+Hello, this is test file
+I just try test CON in Windows' cmd for using to fill file from command line
+And apparantely - this work :) !
+Now try spec symbols:!@#$%^&*(
+!str
+@str
+#str
+$str
+%str
+^str
+&str
+*str
+)str
