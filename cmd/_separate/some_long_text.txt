@@ -1,0 +1,5 @@
+The scientists labeled their paper "for discussion only." It is not a final report.
+
+The find command does not recognize carriage returns. When you use find to search for text in a file that includes carriage returns, you must limit the search string to text that can be found between carriage returns (that is, a string that is not likely to be interrupted by a carriage return). For example, find does not report a match for the string "tax file" wherever a carriage return occurs between the word "tax" and the word "file."
+
+To find a string that contains text within quotation marks, you must first enclose the entire string in quotation marks. Second, you must use two quotation marks for each quotation mark contained within the string. To find "The scientists labeled their paper "for discussion only." It is not a final report." in Report.doc, type

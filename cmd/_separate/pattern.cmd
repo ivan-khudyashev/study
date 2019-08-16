@@ -7,6 +7,6 @@ SET me=%~n0
 SET parent=%~dp0
 SET /A errno=0
 :: Set  error codes
-SET /A ERROR_COMMAND_NOT_FOUND = 2
+SET /A ERROR_COMMAND_NOT_FOUND=2
 
 EXIT /B %errno%
