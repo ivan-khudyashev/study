@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Test JS
+    </title>
+    <script>
+        function fact(n)
+        {
+            if(n < 1) throw "Can't calculate factorial";
+            for(var res = 1; n >1; n--) res *= n;
+            return res;
+        }
+        function calc_fact()
+        {
+            try {
+                var n = Number(prompt("Please enter a positive integer"));
+                var f = fact(n);
+                alert(n + "! = " + f);
+            }
+            catch(e) {
+                alert(e);
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Result of JS-script execution:</p>
+    <p id="res"></p>
+    <script>
+        var p = document.getElementById("res");
+        /* some execution here */
+        p.innerHTML = "some result here";
+    </script>
+    <button onclick="calc_fact();">Calculate factorial</button>
+</body>
+</html>
