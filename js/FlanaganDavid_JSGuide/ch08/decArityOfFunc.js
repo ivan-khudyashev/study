@@ -10,6 +10,7 @@ function main()
     f(5, 7, 9);
     var g = decArity(f, null);
     g(50, 70, 90);
+    console.log("Arity of g = ", g.length);
 
 
     console.log("Program successfully finished");
