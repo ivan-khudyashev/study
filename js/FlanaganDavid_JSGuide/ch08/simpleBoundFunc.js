@@ -2,7 +2,9 @@
 Function.prototype.newbound = function(o /* args */)
 {
     // Save current function as obj, and current args list as obj
-    var self = arguments.callee, boundArgs = arguments;
+    //  "this" here because call `func.newbound()` execute at function
+    //    which must using in .apply() method
+    var self = this, boundArgs = arguments;
     
     // return function which bounded to object 'o'
     return function() {
@@ -13,16 +15,24 @@ Function.prototype.newbound = function(o /* args */)
         }
         // now using arguments in real invocation of bounded func
         for(i = 0; i < arguments.length; i++) {
-            args.push(boundArgs[i]);
+            args.push(arguments[i]);
         }
         // set length property of returned bounded func
-        arguments.callee.length = (self.length || 0) - boundArgs.length;
-        if(arguments.callee.length < 0) {
-            arguments.callee.length = 0;
+        var lenFuncProp = Object.getOwnPropertyDescriptor(arguments.callee, "length");
+        console.log("\tDEBUG. LenProp: ");
+        lenFuncProp.value = (self.length || 0) - (boundArgs.length - 1);
+        if(lenFuncProp.value < 0) {
+            lenFuncProp.value = 0;
+        }
+        Object.defineProperty(arguments.callee, "length", lenFuncProp);
+        var prop = Object.getOwnPropertyDescriptor(arguments.callee, "length");
+        for(var p in prop) {
+            //console.log("\t\tkey = " + p + "; value = " + prop[p]);
         }
         // apply bound self-function (that function at calling newbound() )
         //  acording object o - as we need
         //  such as make application arguments from newbound()
+        console.log("\tDEBUG. Current func len:", arguments.callee.length);
         return self.apply(o, args);
     }
 }
@@ -36,9 +46,12 @@ function main()
     // Action
     var o = {};
     var f1 = f;
-    var f2 = f.newbound(o "appl_f2_1", "appl_f2_2");
-    var f3 = f.newbound(o);
-    var f4 = f.newbound(o, "appl_f4_1", "appl_f4_2", "appl_f4_3");
+    console.log("Preliminary test:");
+    console.log("Arity func: ", f.newbound(null, "test").length);
+    console.log("\n");
+    var f2 = f.newbound(null, "appl_f2_1", "appl_f2_2");
+    var f3 = f.newbound(null);
+    var f4 = f.newbound(null, "appl_f4_1", "appl_f4_2", "appl_f4_3");
 
     console.log("f1 arity = ", f1.length);
     console.log("f2 arity = ", f2.length);
@@ -57,5 +70,6 @@ function main()
 function f(p1, p2, p3)
 {
     console.log("function f with 3 arg: ", p1, " - ", p2, " - ", p3);
+    console.log("My arity = " + arguments.callee.length);
 }
 
