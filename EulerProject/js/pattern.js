@@ -1,5 +1,5 @@
 // (C) Copyright Khudyashev Ivan, bahek1983@gmail.com, 2019
-function main()
+(function main()
 {
     // Start program
     console.log("Start program");
@@ -10,6 +10,4 @@ function main()
 
     // End program
     console.log("End program");
-}
-
-main()
+})();
