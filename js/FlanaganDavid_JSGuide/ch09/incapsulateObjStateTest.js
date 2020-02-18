@@ -16,7 +16,6 @@
         function getFrom() {return from; }
         function getTo() {return to;}
         function setFrom(f) {
-            console.log("In setFrom(). this = ", this);
             if( f <= to) from =f;
             else throw new Error("Range: from must be <= to");
         }
@@ -42,21 +41,14 @@
 
     function main()
     {
-        r = new Range(0, 9);
-        console.log("Range:", r.toString());
-        console.log("r.includes(5): ", r.includes(5));
-        r.from = 5;
-        console.log("Range:", r.toString());
-        console.log("Properties r (instance of Range):");
-        console.log(Object.getOwnPropertyNames(r))
-        console.log("Properties Range.prototype: ");
-        console.log(Object.getOwnPropertyNames(Range.prototype));
-        console.log("And now print main context:");
-        dd = Object.getOwnPropertyNames(this);
-        console.log(dd);
+        r1 = new Range(0, 9);
+        r2 = new Range(0, 9);
+        console.log("Range 1:", r1.toString());
+        console.log("Range 2:", r2.toString());
+        r1.from = 5;
+        console.log("After change in Range 1")
+        console.log("Range 1:", r1.toString());
+        console.log("Range 2:", r2.toString());
     }
 
     main();
-    console.log("And now print global context:");
-    dd = Object.getOwnPropertyNames(this);
-    console.log(dd);
