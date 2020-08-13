@@ -1,6 +1,8 @@
+.vscode
 *.o
 *.so
 *.a
+*.exe
 *.swp
 *.$
 *.$$
