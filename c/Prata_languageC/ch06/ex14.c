@@ -10,19 +10,21 @@ int main(void)
     double numbers[ARRAY_LEN];
     double sumNumbers[ARRAY_LEN];
     const char msg[] = "Input %d numbers separated by space: ";
-    const char formatStr = "%10.2f ";
+    const char formatStr[] = "%10.2f ";
     printf(msg, ARRAY_LEN);
     for(int i = 0; i < ARRAY_LEN; i++) {
-        scanf("%f", numbers + i);
+        scanf("%lf", numbers + i);
     }
     // suppose that first array consist at least one element with index 0
     sumNumbers[0] = numbers[0];
     for(int i = 1; i < ARRAY_LEN; i++) {
         sumNumbers[i] = sumNumbers[i - 1] + numbers[i];
     }
+    printf("\n");
     for(int i = 0; i < ARRAY_LEN; i++) {
         printf(formatStr, numbers[i]);
     }
+    printf("\n");
     for(int i = 0; i < ARRAY_LEN; i++) {
         printf(formatStr, sumNumbers[i]);
     }

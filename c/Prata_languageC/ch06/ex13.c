@@ -8,14 +8,14 @@ int main(void)
     // program here
     const int ARRAY_LEN = 8;
     const int TWO = 2;
-    int powerOfTwo[ARRAY_LEN];
-    for(int i = 0, nextPower = 1; i < ARRAY_LEN; i++, nextPower *= TWO) {
+    int powerOfTwo[ARRAY_LEN], i, nextPower;
+    for(i = 0, nextPower = 1; i < ARRAY_LEN; i++, nextPower *= TWO) {
         powerOfTwo[i] = nextPower;
     }
-
-    for(int i = 0; i < ARRAY_LEN; i++) {
+    i = 0;
+    do {
         printf("powerOfTwo[%d] = %d\n", i, powerOfTwo[i]);
-    }
+    } while(++i < ARRAY_LEN);
 
     printf("\nFinish Program!\n");
     return 0;

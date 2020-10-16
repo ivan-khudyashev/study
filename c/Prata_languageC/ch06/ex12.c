@@ -16,8 +16,8 @@ int main(void)
             seq1Sum += 1.0/i;
             seq2Sum += (double)curSign / i;
         }
-    printf("1 + 1/2 + 1/3 + ... = %f\n 1 - 1/2 + 1/3 - 1/4 + ... = %f\n", seq1Sum, seq2Sum);
-    seq1Sum = seq2Sum = 0.0;
+        printf("1 + 1/2 + 1/3 + ... = %f\n 1 - 1/2 + 1/3 - 1/4 + ... = %f\n", seq1Sum, seq2Sum);
+        seq1Sum = seq2Sum = 0.0;
     }
     
 

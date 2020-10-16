@@ -4,12 +4,12 @@
 int main(void)
 {
     const int row = 6;
-    const char printSymb = 'A';
+    const char printSymb = 'A' + row;
     printf("Start Program\n\n");
     // program here
     for(int i = 1; i <= row; i++) {
         for(int j = 1; j <= i; j++)
-            printf("%c", printSymb + row - j);
+            printf("%c", printSymb - j);
         printf("%c", '\n');
     }
 
