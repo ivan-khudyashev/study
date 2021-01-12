@@ -1,4 +1,4 @@
-// Copyright (C) Khudyashev Ivan, 2018-2020, bahek1983@gmail.com
+// Copyright (C) Khudyashev Ivan, 2018-2021, bahek1983@gmail.com
 #include <stdio.h>
 
 int main(void)
