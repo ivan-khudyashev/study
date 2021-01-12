@@ -13,7 +13,7 @@ int main(void)
     printf("Start Program\n\n");
     // program here
     float firstOp, secondOp;
-    const char endInputMsg[] = "Ok, stop calculation. Exit\n";
+    const char endInputMsg[] = "\nOk, stop calculation. Exit\n";
     const char inputFirstMsg[] = "Please, input first argument of operation (real number): ";
     const char inputSecondMsg[] = "Please, input second argument of operation (real number): ";
     const char exitChar = 'q';
@@ -56,7 +56,7 @@ char getOperation(void)
 int skipLine(void)
 {
     int ch;
-    while((ch = getchar()) != EOF && ch != '\n') {printf("%c(%d), ", (char)ch, ch); continue;}
+    while((ch = getchar()) != EOF && ch != '\n') {continue;}
     return ch;
 }
 
@@ -66,9 +66,10 @@ _Bool getFloat(float* op, const char* msg, _Bool notNull)
     const char repeatMsg[] = "Wrong input! It must be real number. Try again: ";
     const char notNullMsg[] = "This operand can't be zero. Try again: ";
     _Bool haveInputed = 0;
+    int cntReadedFloat = 0;
     printf(msg);
     while(!haveInputed) {
-        while(scanf("%f", op) != 1) {
+        while((cntReadedFloat = scanf("%f", op)) != EOF && cntReadedFloat != 1) {
             /* skip remain part of line  and check EOF */
             if(skipLine() == EOF) {
                 printf(endMsg);
@@ -76,12 +77,20 @@ _Bool getFloat(float* op, const char* msg, _Bool notNull)
             }
             printf(repeatMsg);
         }
+        /* take into account if EOF on start of input number */
+        if(cntReadedFloat == EOF) {
+            printf(endMsg);
+            return 0;
+        }
+        /* Check condition on Not zero value for operation */
         if(notNull && *op == 0.0) {
             printf(notNullMsg);
         } else {
             haveInputed = 1;
         }
     }
+    /* Clear input buffer */
+    skipLine();
     return 1;
 }
 
